@@ -6,9 +6,6 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 from sklearn.decomposition import PCA
-import matplotlib.pyplot as plt
-import seaborn as sns
-
 
 @click.command()
 @click.argument('input_filepath', type=click.Path(exists=True))
@@ -45,8 +42,6 @@ def main(input_filepath, output_filepath, pca_var):
 
     # write output
     output_df.to_csv(output_filepath, index=False)
-
-
 
 if __name__ == '__main__':
     log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'

@@ -25,12 +25,11 @@ summary(mush)
 From this summary we observe that the class distribution is almost 50%-50%. Therefore, we do not have to undersample or oversample our classes.
 
 Visual representation of varibale distributions, split per class:
-```{r, warning=FALSE,message=FALSE,, fig.width=15}
+```{r, warning=FALSE,message=FALSE,, fig.width=15, fig.height = 15}
 mush %>%
   gather(-class, key="key", value="value") %>%
   ggplot(aes(value, fill=class)) +
-  facet_wrap(~ key, scales = "free") +
+  facet_wrap(~ key, scales = "free", ncol=4) +
+  theme(text = element_text(size=18)) +
   geom_histogram(stat="count")
 ```
-
-From this plot we see that we can remove the `veil.type` variable. It contains only one value, so provides no discriminative power but adds to the complexity of the model.
