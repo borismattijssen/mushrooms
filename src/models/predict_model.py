@@ -21,7 +21,7 @@ def default_none(ctx, param, value):
 @click.argument('input_filepath', nargs=1)
 @click.argument('models', nargs=-1, callback=default_none)
 def main(input_filepath, models):
-    """ INPUT_FILEPATH A CSV containing mushrooms.\n
+    """ INPUT_FILEPATH A CSV containing mushrooms. The file should contain a CSV header.\n
     MODELS a list of classification models.
     """
     logger = logging.getLogger(__name__)
@@ -38,7 +38,8 @@ def main(input_filepath, models):
     dum = pd.get_dummies(df).reindex(columns = colnames, fill_value=0)
     pcad = pca.transform(dum)
 
-    print("\n".join([str(x) for x in model.predict(pcad)]))
+    classes = [str(x).replace("1", "p").replace("0", "e") for x in model.predict(pcad)]
+    print("\n".join(classes))
 
 
     # find optimal model
