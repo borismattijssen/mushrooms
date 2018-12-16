@@ -2,6 +2,7 @@
 import click
 import logging
 import knn
+import svm
 from pathlib import Path
 import os.path
 
@@ -18,8 +19,9 @@ def main(use_cache, knn_filepath):
 
     (knn_model, knn_score) = knn.optimize_knn(use_cache, knn_filepath)
     #(rf_model, rf_score) = rf.optimize_knn(use_cache, rf_filepath)
-    # ...
-    # ...
+    #(svm_model, svm_score) = svm.optimize_svm(use_cache, svm_filepath)
+    #(nn_model, nn_score) = nn.optimize_nn(use_cache, nn_filepath)
+
 
     # find optimal model
 

@@ -2,6 +2,7 @@ from pathlib import Path
 import os.path
 import pandas as pd
 
+
 def load_pca_data():
     """ Load the PCA'd mushroom dataset.
     """
