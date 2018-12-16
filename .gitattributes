@@ -1,0 +1,6 @@
+models/colnames.p filter=lfs diff=lfs merge=lfs -text
+models/knn-high-res.p filter=lfs diff=lfs merge=lfs -text
+models/knn-low-res.p filter=lfs diff=lfs merge=lfs -text
+models/pca.p filter=lfs diff=lfs merge=lfs -text
+models/rf-grid-search.p filter=lfs diff=lfs merge=lfs -text
+models/rf-random-search.p filter=lfs diff=lfs merge=lfs -text
