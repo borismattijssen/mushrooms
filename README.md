@@ -3,6 +3,31 @@ mushrooms
 
 Classification system to detect toxic mushrooms.
 
+Setup
+------------
+
+The project comes with pre-trained models. Therefore, only python requirements have to be installed:
+
+```
+pip install -r requirements.txt
+```
+
+Classifying new mushrooms
+------------
+
+Novel data can be classified using `src/models/predict_model.py`. It expects a CSV file with headers. The expected CSV fields can be found `data/raw/mushrooms.csv`.
+
+```
+Usage: predict_model.py [OPTIONS] INPUT_FILEPATH [MODEL]
+
+  INPUT_FILEPATH A CSV containing mushrooms. The file should contain a CSV header.
+
+  MODEL a filepath to a pickled classification model.
+
+Options:
+  --help  Show this message and exit.
+```
+
 Project Organization
 ------------
 
